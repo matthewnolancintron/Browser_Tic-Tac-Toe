@@ -1,0 +1,278 @@
+body{
+    transition: 600ms ease-in-out all;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+header{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 900;
+    font-size: x-large;
+    text-align: center;
+    background-color:black;
+    color:white;
+    transition: 600ms ease-in-out all;
+    
+}
+
+
+#resetGameButton{
+    padding: 24px 64px;
+    border-radius: 45%;
+  
+}
+
+h1{
+    text-decoration:wavy underline;
+    text-align: center;  
+}
+
+.placeHolder{
+    display: hidden;
+    color:black;
+    text-decoration: none;
+}
+
+
+section{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#gameBoard{
+    display:flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    list-style-type:none;
+    border:inset black 1px;
+    box-shadow: 3px 9px 27px;
+    transition: 650ms ease-in-out all;
+}
+
+.halt > .gameSquare {
+    pointer-events:none;
+}
+
+.not-allowed{
+    cursor: not-allowed;
+}
+
+.gameSquare{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:96px;
+    height:96px;
+    font-size: 25px;
+    cursor: pointer;
+    border:solid 2px;
+    transition: 700ms ease-in-out all;
+   
+}
+
+.alreadyFilled{
+    cursor: not-allowed;
+}
+
+.gameSquare:nth-child(odd){
+   background-color:rgb(176, 221, 178); 
+}
+
+.gameSquare:nth-child(even){
+    background-color:rgb(209, 236, 213); 
+ }
+
+ /*get players names styles*/
+ .modal{
+    transform: scale(1);
+    transition: 200ms ease-in-out;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    max-height: 100%;
+    overflow:hidden;
+    border: solid green;
+   
+    background:linear-gradient(green,rgb(1, 73, 1));
+ }
+
+ .modal.inactive{
+     transform: scale(0);
+ }
+
+ .modal-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 27px;
+    border-bottom: green dotted 3px;
+    background-color:rgb(32, 43, 13);
+    color: white;
+    font-size: 27px;
+}
+
+.modal-body{
+    /*todo style later*/
+    /* padding: 9px,9px; */
+}
+
+.modal-header .close-modal{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+
+#overlay{
+    position: fixed;
+    opacity:1;
+    transition: 200ms ease-in-out;
+    top: 0%;
+    left:0%;
+    right:0%;
+    bottom:0%;
+    background-color: rgba(10, 184, 103, 0.884);
+    pointer-events: none;
+}
+
+
+
+#overlay.inactive {
+    opacity: 0;
+}
+
+.vsButtonsGroup{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 2%;
+}
+
+.VsButton{
+    background-color: lightgray;
+    padding: 64px;
+    font-size: 32px;
+    border-radius: 10%;
+}
+
+.difficultyQuestion.question{
+    flex-flow: column; 
+    gap: 27%;
+    align-self: center;
+}
+
+
+.getPlayerNamesForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    color: whitesmoke;
+    background:linear-gradient(green,rgb(1, 73, 1));
+    border:none;
+    height: 100%;
+}
+
+#playerNamesFormGroup{
+    display:flex;
+    flex-direction: column;
+}
+.AiQuestionsFormGroup{
+    display:flex;
+    flex-direction: column;    
+}
+
+.playerQuestionsGroup{
+    display:flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap:3%;
+}
+
+.playerQuestions{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    gap:27%;
+    background-color: rgba(29, 217, 241, 0.281);
+    color: black;
+    border: solid black 3px;
+    font-size: 21px;
+    
+}
+
+
+.vsAiQuestions{
+
+}
+
+.question{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color: white;
+    gap: 9%;
+    padding: 0 3%;
+}
+
+input[type=color]{
+    cursor: pointer;
+    width:220px
+    
+}
+
+input[type=text]::placeholder{
+    font-size: 19px;
+    text-align: center;
+}
+
+.playerOneQuestions{
+    flex-grow: 1;
+}
+
+.playerTwoQuestions{
+    flex-grow: 1;
+}
+
+#submit-playerNames{
+    cursor: pointer;
+    align-self: center;
+    flex-shrink: 2;
+    flex-grow: 0;
+
+    /* border-radius: 100%; */
+    padding: 64px;
+    font-size: 32px;
+    /*make button more button like... box shadow push animation*/
+    box-shadow: -5px 5px grey;
+
+
+    
+}
+
+#submit-playerNames:active{
+    box-shadow: -4px 3px rgb(78, 78, 78);
+}
+
+
+.winDisplay{
+    flex-basis: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 32px;
+    width: fit-content;
+    background-color: black;
+    color:lightgreen;
+}
