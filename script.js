@@ -232,6 +232,8 @@ const gameBoardObject = (function() {
                      * for performence.
                      */
 
+                    //right now difficulty is placebo effect. shhh.
+
                     //random move (when easy)
                     let aiMoveChoice = possibleMovesLeft[Math.floor(Math.random()*possibleMovesLeft.length)];
 
